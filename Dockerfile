@@ -3,7 +3,7 @@ FROM node:14.17-alpine as build
 WORKDIR /app
 ENV PATH /app/node_modules/.bin:$Path
 
-COPY package*.json package-lock.json ./
+COPY package*.json yarn.lock ./
 RUN npm ci --silent
 
 RUN npm install react-scripts@4.0.3 -g --silent
