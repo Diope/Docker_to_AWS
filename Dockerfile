@@ -1,9 +1,9 @@
 # Build
 FROM node:14.17-alpine as build
 WORKDIR /app
-ENV PATH /app/node_modules/.bin:$Path
+ENV PATH /app/node_modules/.bin:$PATH
 
-COPY package*.json yarn.lock ./
+COPY package*.json ./
 RUN npm ci --silent
 
 RUN npm install react-scripts@4.0.3 -g --silent
